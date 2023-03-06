@@ -3,10 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ladder
-  - OnWayPlatform
-  - OneWayPlatform
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -41,12 +38,6 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: Background
-    uniqueID: 976205109
-    locked: 0
-  - name: Ground
-    uniqueID: 1294688617
-    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

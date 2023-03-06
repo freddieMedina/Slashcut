@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   jumpImpulse: 10
+  isLadder: 0
   _isMoving: 0
   _isFacingRight: 1
 --- !u!114 &4181803196483705931
