@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 2003984050615180270}
   - component: {fileID: 8003271630996411565}
   - component: {fileID: 3066155013701037504}
+  - component: {fileID: 6000205660017032428}
+  - component: {fileID: 8937900960681797351}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -125,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 5
   jumpImpulse: 10
+  isLadder: 0
   _isMoving: 0
   _isFacingRight: 1
 --- !u!114 &4181803196483705931
@@ -185,7 +188,19 @@ MonoBehaviour:
     m_ActionId: 9e915d12-5ceb-46a1-b363-4235c7309958
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4321390958407315453}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: onAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: ce5f980d-6617-4b74-89a5-248a98545ed7
     m_ActionName: Player/Attack[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -232,7 +247,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4321390958407315453}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: onJump
+        m_MethodName: onJumps
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -244,6 +259,30 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c32dd40d-213a-4443-bf82-c1ed36b5550d
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4321390958407315453}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: onJump
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c3e5fd05-c9b7-4f77-bc7d-1bcd9b105635
+    m_ActionName: Player/Ladder[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e95a0cf-622e-4e9a-a478-c1d0353004f7
+    m_ActionName: Player/Pass[/Keyboard/w,/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dac8c230-a769-4ba4-ab8b-413ceb4a4a0a
+    m_ActionName: Player/PassBack[/Keyboard/s]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -282,8 +321,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07186034, y: -0.053895235}
-  m_Size: {x: 0.1276148, y: 0.27602196}
+  m_Offset: {x: 0.029376507, y: -0.32863355}
+  m_Size: {x: 0.51108265, y: 1.740911}
   m_Direction: 0
 --- !u!114 &3066155013701037504
 MonoBehaviour:
@@ -317,3 +356,32 @@ MonoBehaviour:
   _isGrounded: 1
   _isOnWall: 0
   _isOnCeiling: 0
+--- !u!114 &6000205660017032428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22828515923589621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7efd168d3a1e7ef40a33229d37b234ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCollider: {fileID: 8003271630996411565}
+  rb: {fileID: 22828515923589620}
+--- !u!114 &8937900960681797351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22828515923589621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdf74b3588a59734396e93ffb8b08643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isLadder: 0
+  isClimbing: 0
+  rb: {fileID: 22828515923589620}

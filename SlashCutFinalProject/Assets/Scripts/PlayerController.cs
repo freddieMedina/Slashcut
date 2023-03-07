@@ -27,8 +27,9 @@ public class PlayerController : MonoBehaviour
 
     public float MoveWall{get
     {
-        
-        if(IsMoving && !touchingDirections.IsOnWall)
+        if(CanMove){
+
+            if(IsMoving && !touchingDirections.IsOnWall)
         {
                 
                 return walkSpeed;
@@ -39,6 +40,11 @@ public class PlayerController : MonoBehaviour
           
             return 0;
         }
+        }else
+        {
+            return 0;
+        }
+        
       
     
     }
@@ -95,6 +101,10 @@ public class PlayerController : MonoBehaviour
 }
     Rigidbody2D rb;
     Animator animator;
+    public bool CanMove{get 
+    {
+        return animator.GetBool(AnimationStrings.canMove);
+    }}
 
     // Start is called before the first frame update
     void Start()
@@ -172,12 +182,20 @@ public class PlayerController : MonoBehaviour
     public void onJumps(InputAction.CallbackContext context)
     {
         //TODO check if alive
-        if(context.started && touchingDirections.IsGrounded)
+        if(context.started && touchingDirections.IsGrounded && CanMove)
         {
-            animator.SetTrigger(AnimationStrings.jump);
+            animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
     }
 
 
+    public void onAttack(InputAction.CallbackContext context)
+    {
+        if(context.started && touchingDirections.IsGrounded)
+        {
+        animator.SetTrigger(AnimationStrings.attackTrigger);
+        }
+
+    }
 }
