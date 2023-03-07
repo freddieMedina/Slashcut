@@ -6678,6 +6678,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22828515923589627, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1459458051413904079, guid: 3accdbde4e56f5c4e9cfa311b8cef55f, type: 3}
+    - target: {fileID: 22828515923589627, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
       propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
@@ -6691,7 +6695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22828515923589627, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
       propertyPath: m_RenderingLayerMask
-      value: 3
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4181803196483705931, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
       propertyPath: m_ActionEvents.Array.size
@@ -6815,6 +6819,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8003271630996411565, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
       propertyPath: m_Size.x
+<<<<<<< HEAD
       value: 0.100300886
       objectReference: {fileID: 0}
     - target: {fileID: 8003271630996411565, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
@@ -6828,6 +6833,21 @@ PrefabInstance:
     - target: {fileID: 8003271630996411565, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
       propertyPath: m_Offset.y
       value: -0.05171292
+=======
+      value: 0.102003954
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003271630996411565, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
+      propertyPath: m_Size.y
+      value: 0.26295072
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003271630996411565, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.07140374
+      objectReference: {fileID: 0}
+    - target: {fileID: 8003271630996411565, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.04030619
+>>>>>>> 1d5a86ecbdd4a5944d4def46425a983d5ad8947b
       objectReference: {fileID: 0}
     - target: {fileID: 8003271630996411565, guid: 9fa5ad59585051743a4a309383724bbf, type: 3}
       propertyPath: m_UsedByEffector
