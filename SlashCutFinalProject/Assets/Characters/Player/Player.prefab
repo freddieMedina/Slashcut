@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3066155013701037504}
   - component: {fileID: 6000205660017032428}
   - component: {fileID: 8937900960681797351}
+  - component: {fileID: 6571458535830321862}
   m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
@@ -385,3 +386,15 @@ MonoBehaviour:
   isLadder: 0
   isClimbing: 0
   rb: {fileID: 22828515923589620}
+--- !u!114 &6571458535830321862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22828515923589621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fdcd7c23e55d894987a40d94b5401cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
