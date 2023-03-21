@@ -14,7 +14,7 @@ TouchingDirections touchingDirections;
 
 public enum WalkableDirection{Right, Left}
 
-private Vector2 WalkDirectionVector = Vector2.right;
+private Vector2 WalkDirectionVector = Vector2.left;
 
 private WalkableDirection _walkDirection;
 public WalkableDirection WalkDirection
@@ -26,13 +26,13 @@ public WalkableDirection WalkDirection
             //change direction
             gameObject.transform.localScale = new Vector2(gameObject.transform.localScale.x * -1, gameObject.transform.localScale.y);
 
-            if(value == WalkableDirection.Right)
-            {
-                WalkDirectionVector = Vector2.right;
-
-            } else if(value == WalkableDirection.Left)
+            if(value == WalkableDirection.Left)
             {
                 WalkDirectionVector = Vector2.left;
+
+            } else if(value == WalkableDirection.Right)
+            {
+                WalkDirectionVector = Vector2.right;
             }
         
         }
@@ -59,12 +59,12 @@ private void FixedUpdate()
 
 private void FlipDirection()
 {
-    if(WalkDirection == WalkableDirection.Right)
-    {
-        WalkDirection = WalkableDirection.Left;
-    } else if(WalkDirection == WalkableDirection.Left)
+    if(WalkDirection == WalkableDirection.Left)
     {
         WalkDirection = WalkableDirection.Right;
+    } else if(WalkDirection == WalkableDirection.Right)
+    {
+        WalkDirection = WalkableDirection.Left;
     }else
     {
        Debug.LogError("Walkable direction is not set to right or left"); 

@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections) )]
+[RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damagable))]
 public class PlayerController : MonoBehaviour
 {
     public float walkSpeed = 5f;
     Vector2 moveInput;
     public float jumpImpulse = 1f;
     TouchingDirections touchingDirections;
+    Damagable damagable;
 
     
     LadderMovement ladder;
@@ -58,6 +59,7 @@ public class PlayerController : MonoBehaviour
         rb =GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         touchingDirections = GetComponent<TouchingDirections>();
+        damagable = GetComponent<Damagable>();
 
     }
     
@@ -99,6 +101,8 @@ public class PlayerController : MonoBehaviour
         _isFacingRight = value;
     }
 }
+
+    
     Rigidbody2D rb;
     Animator animator;
     public bool CanMove{get 
@@ -153,7 +157,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate() 
     {
         
+        if(!damagable.LockVelocity)
         rb.velocity = new Vector2(moveInput.x * MoveWall, rb.velocity.y);
+
         animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
         
         
@@ -213,4 +219,11 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    public void OnHit(int damage, Vector2 knockback)
+    {
+        
+        rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
 }
