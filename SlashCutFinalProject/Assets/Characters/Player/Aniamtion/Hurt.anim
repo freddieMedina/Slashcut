@@ -27,13 +27,22 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: knockback.x
-    path: SwordAttack
+    path: SwordAttack1
     classID: 114
     script: {fileID: 11500000, guid: c7d8e83b886db684280962ff1b1a0749, type: 3}
   - curve:
@@ -46,30 +55,39 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: knockback.y
-    path: SwordAttack
+    path: SwordAttack1
     classID: 114
     script: {fileID: 11500000, guid: c7d8e83b886db684280962ff1b1a0749, type: 3}
   m_PPtrCurves:
   - curve:
     - time: 0
       value: {fileID: 8207571220096118977, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
-    - time: 0.1
+    - time: 0.05
       value: {fileID: 7910466545735013580, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
-    - time: 0.2
+    - time: 0.1
       value: {fileID: -4360246032673291897, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
-    - time: 0.3
+    - time: 0.15
       value: {fileID: -6130774247032492815, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
-  m_SampleRate: 10
+  m_SampleRate: 20
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -77,26 +95,26 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
-      attribute: 0
-      script: {fileID: 0}
-      typeID: 212
-      customType: 23
-      isPPtrCurve: 1
-    - serializedVersion: 2
-      path: 2109124072
+      path: 762327888
       attribute: 1526012355
       script: {fileID: 11500000, guid: c7d8e83b886db684280962ff1b1a0749, type: 3}
       typeID: 114
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2109124072
+      path: 762327888
       attribute: 770845013
       script: {fileID: 11500000, guid: c7d8e83b886db684280962ff1b1a0749, type: 3}
       typeID: 114
       customType: 0
       isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 0
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 8207571220096118977, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
     - {fileID: 7910466545735013580, guid: ae72133dacba6ec4eb33ecde48f50e56, type: 3}
@@ -107,7 +125,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.4
+    m_StopTime: 0.2
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -133,13 +151,22 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: knockback.x
-    path: SwordAttack
+    path: SwordAttack1
     classID: 114
     script: {fileID: 11500000, guid: c7d8e83b886db684280962ff1b1a0749, type: 3}
   - curve:
@@ -152,13 +179,22 @@ AnimationClip:
         outSlope: 0
         tangentMode: 136
         weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.2
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: knockback.y
-    path: SwordAttack
+    path: SwordAttack1
     classID: 114
     script: {fileID: 11500000, guid: c7d8e83b886db684280962ff1b1a0749, type: 3}
   m_EulerEditorCurves: []

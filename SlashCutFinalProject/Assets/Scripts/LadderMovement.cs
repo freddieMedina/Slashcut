@@ -9,6 +9,7 @@ public class LadderMovement : MonoBehaviour
     public bool isLadder;
     public bool isClimbing;
     private GameObject ladder;
+    
 
    // [SerializeField] private CapsuleCollider2D playerCollider;
 
@@ -38,6 +39,7 @@ public class LadderMovement : MonoBehaviour
             
             rb.gravityScale = 0f;
             rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
+            
         }
         else
         {

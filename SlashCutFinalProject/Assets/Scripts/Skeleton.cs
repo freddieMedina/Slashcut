@@ -7,8 +7,9 @@ using UnityEngine;
 public class Skeleton : MonoBehaviour
 {
     
-public float walkSpeed = 1f;
+public float walkAcceleration = 1f;
 public float walkStopRate = 0.05f;
+public float maxSpeed = 1f;
 public DetectionZone attackZone;
 public DetectionZone cliffDetectionZone;
 
@@ -101,7 +102,8 @@ private void FixedUpdate()
     if(!damagable.LockVelocity)
     {
     if(CanMove)
-      rb.velocity = new Vector2(walkSpeed * WalkDirectionVector.x, rb.velocity.y);
+        // Accelerate toward max speed
+        rb.velocity = new Vector2(Mathf.Clamp(rb.velocity.x + (walkAcceleration * WalkDirectionVector.x * Time.fixedDeltaTime), -maxSpeed, maxSpeed), rb.velocity.y);
     else
         rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x,0, walkStopRate),rb.velocity.y);
     }

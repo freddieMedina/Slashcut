@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6349808462648149614}
   - component: {fileID: 7332669075733367146}
+  - component: {fileID: 7107901090965006176}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -47,3 +48,105 @@ MonoBehaviour:
   damageTextPrefab: {fileID: 3528312771072622246, guid: 5a0bb7537a8c3c54fa63672cc4b11483, type: 3}
   healthTextPrefab: {fileID: 3528312771072622246, guid: 20815319398fb224c943206a122d433e, type: 3}
   gameCanvas: {fileID: 0}
+--- !u!114 &7107901090965006176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561941681347848783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: ed4fd0b9b560f8f40a2d210f95b02a92, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: adcb8f8b-5dcd-4206-91c5-c4ae7257e263
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e915d12-5ceb-46a1-b363-4235c7309958
+    m_ActionName: Player/Look[/Mouse/delta]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce5f980d-6617-4b74-89a5-248a98545ed7
+    m_ActionName: Player/Attack[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c32dd40d-213a-4443-bf82-c1ed36b5550d
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c3e5fd05-c9b7-4f77-bc7d-1bcd9b105635
+    m_ActionName: Player/Ladder[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9e95a0cf-622e-4e9a-a478-c1d0353004f7
+    m_ActionName: Player/Pass[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dac8c230-a769-4ba4-ab8b-413ceb4a4a0a
+    m_ActionName: Player/PassBack[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce3c6a95-22f8-4075-80d4-d90c58458416
+    m_ActionName: Player/RangedAttack[/Keyboard/f]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b4c3c29e-e785-48d1-af08-bffddbf3df7f
+    m_ActionName: UI/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f1314cf9-62c2-4d31-95fe-52a52e25d624
+    m_ActionName: UI/Submit[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dd00838d-38fe-405a-aa73-663c2aa8656c
+    m_ActionName: UI/Cancel[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 096ecd95-88af-4de0-89ae-53f927076f0a
+    m_ActionName: UI/Point[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8ac91976-2c25-41ed-a339-edbfca68c14e
+    m_ActionName: UI/Click[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1bae1d82-7abe-4716-bcba-6718d563d75f
+    m_ActionName: UI/ScrollWheel[/Mouse/scroll]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3fc91e3a-33a6-4b09-8878-e13bcdbfa470
+    m_ActionName: UI/MiddleClick[/Mouse/middleButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 218950cd-2663-420e-8687-f6acffdbddb4
+    m_ActionName: UI/RightClick[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 889378ae-ef80-468e-86e8-c118a035c573
+    m_ActionName: UI/TrackedDevicePosition
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5ad2bda0-76f8-4803-8604-2d601dca2009
+    m_ActionName: UI/TrackedDeviceOrientation
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}

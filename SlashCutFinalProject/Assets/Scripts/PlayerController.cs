@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+using UnityEngine.UI;
+using System.Linq;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damagable))]
 public class PlayerController : MonoBehaviour
@@ -17,6 +20,9 @@ public class PlayerController : MonoBehaviour
     LadderFloor floor;
 
     public bool isLadder;
+
+    ManaBarScript ranged;
+    
 
    
     
@@ -133,22 +139,24 @@ public class PlayerController : MonoBehaviour
         {
             
             
-            animator.SetBool("isClimbing", true);
+            animator.SetBool(AnimationStrings.isClimbing, true);
+            
+            
 
             if(IsMoving == false){
-                animator.speed =0;
+                
+                animator.speed = 0;
         
-        }
-        else{
+            }else{
             animator.speed =1;
-        }
+             }
         
         }
 
         if(rb.gravityScale != 0f)
         {
             
-            animator.SetBool("isClimbing", false);
+            animator.SetBool(AnimationStrings.isClimbing, false);
             animator.speed =1;
         }
     }
@@ -216,6 +224,15 @@ public class PlayerController : MonoBehaviour
         if(context.started && touchingDirections.IsGrounded)
         {
         animator.SetTrigger(AnimationStrings.attackTrigger);
+        }
+
+    }
+
+    public void onRangedAttack(InputAction.CallbackContext context)
+    {
+        if(context.started && touchingDirections.IsGrounded)
+        {
+        animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
         }
 
     }
