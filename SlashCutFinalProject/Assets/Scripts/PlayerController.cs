@@ -23,14 +23,8 @@ public class PlayerController : MonoBehaviour
 
     ManaBarScript ranged;
     
-
-   
+ 
     
-
-    
-
-
-
 
     public float MoveWall{get
     {

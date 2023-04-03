@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -36,11 +38,14 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+       
         pauseMenuUI.SetActive(true); // enable the pause menu UI panel
         pauseText.SetActive(true);
         Time.timeScale = 0f; // set the game's time scale to 0, effectively pausing it
         isPaused = true; // set the isPaused flag to true
     }
+
+   
 
 
 }
