@@ -20,6 +20,8 @@ public class Attack : MonoBehaviour
         // See if it can be hit
         Damagable damagable = collision.GetComponent<Damagable>();
 
+        
+
         if(damagable != null)
         {
             Vector2 deliveredKnockback = transform.parent.localScale.x > 0 ? knockback : new Vector2(-knockback.x, knockback.y);

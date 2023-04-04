@@ -22,6 +22,14 @@ public class PlayerController : MonoBehaviour
     public bool isLadder;
 
     ManaBarScript ranged;
+
+    //record position of player
+    private Vector3 respawnPoint;
+
+    //Link script to fall detector
+    public GameObject fallDetector;
+
+   
     
  
     
@@ -121,7 +129,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        respawnPoint = transform.position;
     }
 
     // Update is called once per frame
@@ -130,29 +138,25 @@ public class PlayerController : MonoBehaviour
         
 
         if(rb.gravityScale == 0f)
-        {
-            
-            
-            animator.SetBool(AnimationStrings.isClimbing, true);
-            
-            
+        {           
+            animator.SetBool(AnimationStrings.isClimbing, true);          
 
             if(IsMoving == false){
-                
                 animator.speed = 0;
-        
-            }else{
-            animator.speed =1;
-             }
+            }else
+            {
+                animator.speed =1;
+            }
         
         }
 
         if(rb.gravityScale != 0f)
         {
-            
             animator.SetBool(AnimationStrings.isClimbing, false);
-            animator.speed =1;
+            animator.speed = 1;
         }
+
+        fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
     }
 
 
@@ -162,13 +166,8 @@ public class PlayerController : MonoBehaviour
         if(!damagable.LockVelocity)
         rb.velocity = new Vector2(moveInput.x * MoveWall, rb.velocity.y);
 
-        animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y);
-        
-        
-        
-        
-
-               
+        animator.SetFloat(AnimationStrings.yVelocity, rb.velocity.y); 
+                     
     }
 
     public void onMove(InputAction.CallbackContext context)
@@ -235,6 +234,25 @@ public class PlayerController : MonoBehaviour
     {
         
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Spikes")
+        {
+            damagable.Health -= 20;
+            transform.position = respawnPoint;
+            
+        }
+        if(collision.tag == "FallDetector")
+        {
+            transform.position = respawnPoint;
+            damagable.Health -= 30;
+        }
+        else if(collision.tag == "Checkpoint")
+        {
+            respawnPoint = transform.position;
+        }
     }
 
 }
