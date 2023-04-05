@@ -90,6 +90,8 @@ private void Awake() {
         {
             attackCooldown -= Time.deltaTime;
         }
+
+        
         
     }
 private void FixedUpdate()
@@ -107,6 +109,8 @@ private void FixedUpdate()
     else
         rb.velocity = new Vector2(Mathf.Lerp(rb.velocity.x,0, walkStopRate),rb.velocity.y);
     }
+
+    
 }
 
 
@@ -128,6 +132,10 @@ public void OnHit(int damage, Vector2 knockback) {
     {
         
         rb.velocity = new Vector2(knockback.x, rb.velocity.y + knockback.y);
+        if(damagable.IsAlive == false && damagable.Health <= 0 )
+        {
+            damagable.ItemDrop();
+        }
     }
 }
 

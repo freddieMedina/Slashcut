@@ -9,6 +9,9 @@ public class Damagable : MonoBehaviour
     public UnityEvent<int, Vector2> damagableHit;
     public UnityEvent<int, int> healthChanged;
     Animator animator;
+
+    public GameObject [] itemDrops;
+
     [SerializeField]
     private int _maxHealth = 100;
     public int MaxHealth
@@ -140,6 +143,15 @@ public class Damagable : MonoBehaviour
         return true;
     }
          return false;
+    }
+
+    public void ItemDrop()
+    {
+        for (int i = 0; i < itemDrops.Length; i++)
+        {
+            Instantiate(itemDrops[i],transform.position + new Vector3(0,1,0), Quaternion.identity);
+
+        }
     }
          
 }
