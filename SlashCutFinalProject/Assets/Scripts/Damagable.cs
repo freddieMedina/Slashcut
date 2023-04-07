@@ -109,6 +109,7 @@ public class Damagable : MonoBehaviour
                 timeSinceHit += Time.deltaTime;
             }
 
+            
            
         }
     
@@ -123,6 +124,7 @@ public class Damagable : MonoBehaviour
             LockVelocity = true;
             damagableHit?.Invoke(damage,knockback);
             CharacterEvents.characterDamaged.Invoke(gameObject, damage);
+            
 
             return true;
         }

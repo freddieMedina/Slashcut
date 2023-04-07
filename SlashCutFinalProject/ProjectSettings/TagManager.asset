@@ -10,6 +10,7 @@ TagManager:
   - FallDetector
   - Checkpoint
   - Spikes
+  - Enemy
   layers:
   - Default
   - TransparentFX

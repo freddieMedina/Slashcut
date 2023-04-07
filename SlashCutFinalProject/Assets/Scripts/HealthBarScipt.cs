@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using System.Linq;
 using System;
 
+
 public class HealthBarScipt : MonoBehaviour
 {
     public static event Action OnPlayerDeath;
@@ -13,6 +14,14 @@ public class HealthBarScipt : MonoBehaviour
     public TMP_Text healthBarText;
     public Slider healthSlider;
 
+    public Image Portrait;
+
+    public Sprite Low;
+    public Sprite Dead;
+
+    public Sprite High;
+    //public Image charPort;
+   
     private void Awake()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -59,8 +68,20 @@ public class HealthBarScipt : MonoBehaviour
 
           if(playerDamageable.Health <= 0)
         {
+            Portrait.sprite = Dead;
             Debug.Log("Player dead");
             OnPlayerDeath?.Invoke();
+
+        }
+
+        if(playerDamageable.Health >= 50)
+        {
+            Portrait.sprite = High;
+        }
+
+        if(playerDamageable.Health < 50 && playerDamageable.Health > 0 )
+        {
+            Portrait.sprite = Low;
         }
     }
 }
