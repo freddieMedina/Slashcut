@@ -22,7 +22,7 @@ public class PlatformController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") || collision.CompareTag("Enemy"))
+        if(collision.CompareTag("Player") || collision.CompareTag("Enemy") || collision.CompareTag("FireSlug"))
         {
             collision.transform.SetParent(this.transform);
             
