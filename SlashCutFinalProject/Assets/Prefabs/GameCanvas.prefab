@@ -57,7 +57,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 1
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -247,6 +247,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarText: {fileID: 327510683057669294}
   healthSlider: {fileID: 6085962434740551754}
+  Portrait: {fileID: 0}
+  Low: {fileID: 0}
+  Dead: {fileID: 0}
+  High: {fileID: 0}
 --- !u!224 &7555984433798070490 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7823372570379040496, guid: ac204ef04dde870408c285605e301bea, type: 3}

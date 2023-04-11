@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300008, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
+    - target: {fileID: 740532717619276861, guid: ecbc3a5af2463a44db89a0ecfa8995e6, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2277057326177169790, guid: ecbc3a5af2463a44db89a0ecfa8995e6, type: 3}
       propertyPath: healthRestore
       value: 100
@@ -26,6 +30,10 @@ PrefabInstance:
     - target: {fileID: 8931627311952665802, guid: ecbc3a5af2463a44db89a0ecfa8995e6, type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8931627311952665802, guid: ecbc3a5af2463a44db89a0ecfa8995e6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8931627311952665802, guid: ecbc3a5af2463a44db89a0ecfa8995e6, type: 3}
       propertyPath: m_LocalPosition.x

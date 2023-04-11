@@ -9,6 +9,7 @@ using System.Linq;
 [RequireComponent(typeof(Rigidbody2D), typeof(TouchingDirections), typeof(Damagable))]
 public class PlayerController : MonoBehaviour
 {
+    public AudioSource pickupSource;
     public float walkSpeed = 5f;
     Vector2 moveInput;
     public float jumpImpulse = 1f;
@@ -242,12 +243,14 @@ public class PlayerController : MonoBehaviour
         {
             damagable.Health -= 20;
             transform.position = respawnPoint;
+            pickupSource.Play();
             
         }
         if(collision.tag == "FallDetector")
         {
             transform.position = respawnPoint;
             damagable.Health -= 30;
+            pickupSource.Play();
         }
         else if(collision.tag == "Checkpoint")
         {

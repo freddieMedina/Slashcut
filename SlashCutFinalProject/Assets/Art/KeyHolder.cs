@@ -5,6 +5,7 @@ using System;
 
 public class KeyHolder : MonoBehaviour
 {
+    AudioSource pickupSource;
     public event EventHandler onKeyChanged;
     private List<Key.KeyType> keyList;
 
@@ -15,6 +16,7 @@ public class KeyHolder : MonoBehaviour
     private void Awake()
     {
         keyList = new List<Key.KeyType>();
+        pickupSource = GetComponent<AudioSource>();
     }
 
     public void AddKey(Key.KeyType keyType)
@@ -41,6 +43,8 @@ public class KeyHolder : MonoBehaviour
         if( key != null )
         {
             AddKey(key.GetKeyType());
+            if(pickupSource)
+                AudioSource.PlayClipAtPoint(pickupSource.clip, gameObject.transform.position,pickupSource.volume);
             Destroy(key.gameObject);
         }
 

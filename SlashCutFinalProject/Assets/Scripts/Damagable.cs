@@ -10,6 +10,7 @@ public class Damagable : MonoBehaviour
     public UnityEvent<int, int> healthChanged;
     Animator animator;
 
+    [SerializeField]
     public GameObject [] itemDrops;
 
     [SerializeField]
