@@ -8,70 +8,131 @@ using UnityEngine.InputSystem;
 
 public class ManaBarScript : MonoBehaviour
 {    
-    public Slider staminaSlider;
-    public float maxStamina = 100f;
-    public float currentStamina;
-    public float staminaDepletionRate = 20f;
-    public PlayerInput pi;
+    Damagable damagable;
+    public Slider manaSlider;
+    public int maxMana = 100;
+    //public float currentMana;
+    public int manaDepletionRate = 20;
+   public PlayerController pi;
+   //public ManaPickup potion;
+  
+
+    public TMP_Text manaBarText;
+
+    
+    [SerializeField]
+    private bool isCoolDown = false;
+  
+    private float timeSinceRanged = 0f;
+    public float coolDownTime = 100f;
+
+
+    [SerializeField]
+    private int _mana = 100;
+
+    
+    public int currentMana
+    {
+        get
+        {
+            return _mana;
+        }
+        set
+        {
+           _mana = value; 
+           
+          
+           
+        }
+    }
     
     
 
     // Start is called before the first frame update
     void Start()
     {
-        pi = GetComponent<PlayerInput>();
-        currentStamina = maxStamina;
-        staminaSlider.maxValue = maxStamina;
-        staminaSlider.value = currentStamina;
+        manaSlider.value = CalculateSliderPercentage(currentMana, maxMana);
+        manaBarText.text = "MP " + currentMana + " / " + maxMana;
+        //pi = GetComponent<PlayerInput>();
+        //currentMana = maxMana;
+        manaSlider.maxValue = maxMana;
+        manaSlider.value = currentMana;
+        pi.CanRange = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(currentMana < 20)
+        {
+            pi.CanRange = false;
+            isCoolDown = true;
+        }else{
+
        
-        if(currentStamina <= 0f)
+
+       if(isCoolDown)
+            {
+                if(timeSinceRanged > coolDownTime)
+                {
+                    //Remove cooldown
+                    pi.CanRange = true;
+                    isCoolDown = false;
+                    timeSinceRanged = 0;
+                }
+
+                timeSinceRanged += Time.deltaTime;
+            }
+       
+        if (Input.GetKeyDown(KeyCode.F) && !isCoolDown && currentMana >= 20 && pi.CanRange)
         {
-            pi.actions.FindAction("RangedAttack").Disable();
-        }else
-        {
-            pi.actions.FindAction("RangedAttack").Enable();
+            pi.CanRange = false;
+            isCoolDown = true;
+            UseMana(manaDepletionRate);
         }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            UseStamina(staminaDepletionRate);
         }
-        staminaSlider.value = currentStamina;
+        
+        manaSlider.value = currentMana;
     }
 
-    public void DecreaseStamina(float amount)
+    public void DecreaseMana(int amount)
     {
-        currentStamina -= amount;
-        if (currentStamina < 0f)
+        currentMana -= amount;
+        manaSlider.value = CalculateSliderPercentage(currentMana, maxMana);
+        manaBarText.text = "MP " + currentMana + " / " + maxMana;
+        
+        if (currentMana < 0)
         {
-            currentStamina = 0f;
+            currentMana = 0;
         }
     }
 
-    public void IncreaseStamina(float amount)
+    public void IncreaseMana(int amount)
     {
-        currentStamina += amount;
-        if (currentStamina > maxStamina)
+        currentMana += amount;
+        if (currentMana > maxMana)
         {
-            currentStamina = maxStamina;
+            currentMana = maxMana;
         }
     }
 
-    public void UseStamina(float amount)
+    public void UseMana(int amount)
     {
-        if (currentStamina >= amount)
+        if (currentMana >= amount)
         {
-            DecreaseStamina(amount);
-            // Perform action here that uses stamina, e.g. running
+            DecreaseMana(amount);
+
+            // Perform action here that uses mana, e.g. running
         }
         else
         {
-            // Not enough stamina to perform action
-            Debug.Log("Not enough stamina!");
+            // Not enough mana to perform action
+            Debug.Log("Not enough mana!");
         }
     }
+
+    public float CalculateSliderPercentage(int currentMana, int maxMana)
+        {
+            return currentMana / maxMana;
+        }
 }

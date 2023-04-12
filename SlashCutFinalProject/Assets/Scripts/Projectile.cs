@@ -5,8 +5,10 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector2 moveSpeed = new Vector2(3f,0);
-    public int damage = 30;
+    public int damage = 50;
     public Vector2 knockback = Vector2.zero;
+
+    public float lifeTime = 1.1f;
 
     
 
@@ -14,7 +16,9 @@ public class Projectile : MonoBehaviour
 
     private void Awake() {
         {
+            
             rb = GetComponent<Rigidbody2D>();
+            Destroy (gameObject, lifeTime); 
         }
     }
 
@@ -27,7 +31,7 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     private void OnTriggerEnter2D(Collider2D collision) 
@@ -40,9 +44,13 @@ public class Projectile : MonoBehaviour
             //Hit target
             bool gotHit = damagable.Hit(damage, deliveredKnockback);
             
+            
+            
             if(gotHit)
             Debug.Log(collision.name + "hit for" + damage);
             Destroy(gameObject);
         }
     }
+
+   
 }

@@ -20,9 +20,11 @@ public class PlayerController : MonoBehaviour
     LadderMovement ladder;
     LadderFloor floor;
 
+    public ManaBarScript mana;
+
     public bool isLadder;
 
-    ManaBarScript ranged;
+    //public bool canRange = true;
 
     //record position of player
     private Vector3 respawnPoint;
@@ -30,6 +32,24 @@ public class PlayerController : MonoBehaviour
     //Link script to fall detector
     public GameObject fallDetector;
 
+    
+    [SerializeField]
+    private bool _canRange = false;
+
+public bool CanRange {get
+    {
+        return _canRange;
+
+    } 
+    
+     set
+    {
+        _canRange = value;
+        
+    }
+
+    
+}
    
     
  
@@ -131,6 +151,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         respawnPoint = transform.position;
+        
     }
 
     // Update is called once per frame
@@ -224,8 +245,9 @@ public class PlayerController : MonoBehaviour
 
     public void onRangedAttack(InputAction.CallbackContext context)
     {
-        if(context.started && touchingDirections.IsGrounded)
+        if(context.started && touchingDirections.IsGrounded && CanRange)
         {
+        
         animator.SetTrigger(AnimationStrings.rangedAttackTrigger);
         }
 

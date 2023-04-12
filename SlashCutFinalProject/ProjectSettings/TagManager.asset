@@ -28,8 +28,8 @@ TagManager:
   - Pickup
   - Unkillable
   - UnkillableHitbox
-  - 
-  - 
+  - PickupDropped
+  - PlayerHitboxRanged
   - 
   - 
   - 

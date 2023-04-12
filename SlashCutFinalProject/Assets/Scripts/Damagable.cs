@@ -54,17 +54,7 @@ public class Damagable : MonoBehaviour
     
     [SerializeField]
     private bool isInvincible = false;
-    // public bool IsHit {get 
-    // {
-    //     return animator.GetBool(AnimationStrings.isHit);
-    // }
-
-
-    //  private set
-    //  {
-    //     animator.SetBool(AnimationStrings.isHit, value);
-    //  }
-    //  }
+  
     private float timeSinceHit = 0f;
     public float invincibilityTime = 0.25f;
 
