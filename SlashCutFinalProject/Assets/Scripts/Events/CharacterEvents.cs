@@ -12,4 +12,6 @@ public class CharacterEvents : MonoBehaviour
    public static UnityAction<GameObject, int> characterDamaged;
    //Character healed and amount value
    public static UnityAction<GameObject, int> characterHealed;
+   public static UnityAction<GameObject, int> characterHealedMana;
+    public static UnityAction<GameObject, int> increaseMana;
 }

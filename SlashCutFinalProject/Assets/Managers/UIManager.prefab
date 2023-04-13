@@ -47,6 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageTextPrefab: {fileID: 3528312771072622246, guid: 5a0bb7537a8c3c54fa63672cc4b11483, type: 3}
   healthTextPrefab: {fileID: 3528312771072622246, guid: 20815319398fb224c943206a122d433e, type: 3}
+  manaTextPrefab: {fileID: 3528312771072622246, guid: a6465cde397d5b949a788ade0bf1999c, type: 3}
+  manaIncreaseTextPrefab: {fileID: 3528312771072622246, guid: 4efe65dd6632d744287bf580d70cfe99, type: 3}
   gameCanvas: {fileID: 0}
 --- !u!114 &7107901090965006176
 MonoBehaviour:
@@ -145,6 +147,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 5ad2bda0-76f8-4803-8604-2d601dca2009
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1d9387bc-9349-4fbc-96e3-9c62feb3ce07
+    m_ActionName: UI/Escape[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: UI

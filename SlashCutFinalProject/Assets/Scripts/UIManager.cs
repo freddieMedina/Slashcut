@@ -9,6 +9,8 @@ public class UIManager : MonoBehaviour
 {
     public GameObject damageTextPrefab;
     public GameObject healthTextPrefab;
+    public GameObject manaTextPrefab;
+    public GameObject manaIncreaseTextPrefab;
 
     public Canvas gameCanvas;
 
@@ -22,12 +24,16 @@ public class UIManager : MonoBehaviour
     {
         CharacterEvents.characterDamaged += (CharacterTookDamage);
         CharacterEvents.characterHealed += (CharacterHealed);
+        CharacterEvents.characterHealedMana += (CharacterHealedMana);
+        CharacterEvents.increaseMana += (IncreasedMana);
     }
 
     private void OnDisable()
     {
         CharacterEvents.characterDamaged -= (CharacterTookDamage);
         CharacterEvents.characterHealed -= (CharacterHealed);
+        CharacterEvents.characterHealedMana -= (CharacterHealedMana);
+        CharacterEvents.increaseMana -= (IncreasedMana);
     }
     
     public void CharacterTookDamage(GameObject character, int damageRecieved)
@@ -52,4 +58,25 @@ public class UIManager : MonoBehaviour
         tmpText.text = healthRestored.ToString();
     }
 
+    public void CharacterHealedMana(GameObject character, int manaRestored)
+    {
+         //create text at hit
+        Vector3 spawnPostition = Camera.main.WorldToScreenPoint(character.transform.position);
+
+        TMP_Text tmpText = Instantiate(manaTextPrefab, spawnPostition, Quaternion.identity, gameCanvas.transform)
+            .GetComponent<TMP_Text>();
+
+        tmpText.text = manaRestored.ToString();
+    }
+
+    public void IncreasedMana(GameObject character, int manaIncreased)
+    {
+         //create text at hit
+        Vector3 spawnPostition = Camera.main.WorldToScreenPoint(character.transform.position);
+
+        TMP_Text tmpText = Instantiate(manaTextPrefab, spawnPostition, Quaternion.identity, gameCanvas.transform)
+            .GetComponent<TMP_Text>();
+
+        tmpText.text = "Mana Max + " + manaIncreased.ToString() +"!";
+    }
 }

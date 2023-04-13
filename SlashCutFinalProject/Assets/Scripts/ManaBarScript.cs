@@ -14,7 +14,8 @@ public class ManaBarScript : MonoBehaviour
     //public float currentMana;
     public int manaDepletionRate = 20;
    public PlayerController pi;
-   //public ManaPickup potion;
+   
+   
   
 
     public TMP_Text manaBarText;
@@ -63,6 +64,7 @@ public class ManaBarScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if(currentMana < 20)
         {
             pi.CanRange = false;
@@ -84,7 +86,7 @@ public class ManaBarScript : MonoBehaviour
                 timeSinceRanged += Time.deltaTime;
             }
        
-        if (Input.GetKeyDown(KeyCode.F) && !isCoolDown && currentMana >= 20 && pi.CanRange)
+        if (Input.GetKeyDown(KeyCode.F) && !isCoolDown && currentMana >= 20 && pi.CanRange && pi.isGround)
         {
             pi.CanRange = false;
             isCoolDown = true;

@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300024, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
+  m_Sprite: {fileID: 21300008, guid: ddf8838d0a06d8d4c9dec9e3bed69260, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -114,7 +114,7 @@ Animator:
   m_GameObject: {fileID: 5881438234422973528}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 87390fa6d3e9c1d46b4d6ddd0734b561, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7019d036c02148846a6a1ef1f8761114, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -134,7 +134,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: cb59fa58f3cdee544994b9abf70edcb8, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 449b9e52f32fe784fa8b50a10a7f7fca, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -232,5 +232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 024abeeaa4e9ef045994f93d0787bae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manaChanged:
+    m_PersistentCalls:
+      m_Calls: []
   manaRestore: 20
   mana: {fileID: 0}

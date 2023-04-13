@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     //Link script to fall detector
     public GameObject fallDetector;
 
+    public bool isGround;
+
     
     [SerializeField]
     private bool _canRange = false;
@@ -157,7 +159,13 @@ public bool CanRange {get
     // Update is called once per frame
     void Update()
     {
-        
+        if(!touchingDirections.IsGrounded)
+            {
+                isGround = false;
+            }else
+            {
+                isGround = true;
+            }
 
         if(rb.gravityScale == 0f)
         {           
@@ -230,6 +238,7 @@ public bool CanRange {get
         {
             animator.SetTrigger(AnimationStrings.jumpTrigger);
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
+            
         }
     }
 
