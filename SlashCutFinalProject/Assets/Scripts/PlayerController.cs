@@ -167,7 +167,7 @@ public bool CanRange {get
                 isGround = true;
             }
 
-        if(rb.gravityScale == 0f)
+        if(rb.gravityScale == 0f && CanMove)
         {           
             animator.SetBool(AnimationStrings.isClimbing, true);          
 
@@ -247,6 +247,7 @@ public bool CanRange {get
     {
         if(context.started && touchingDirections.IsGrounded)
         {
+        
         animator.SetTrigger(AnimationStrings.attackTrigger);
         }
 

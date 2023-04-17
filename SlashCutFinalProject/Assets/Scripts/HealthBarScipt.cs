@@ -69,6 +69,7 @@ public class HealthBarScipt : MonoBehaviour
           if(playerDamageable.Health <= 0)
         {
             Portrait.sprite = Dead;
+            healthBarText.text = "HP " + "0" + " / " + maxHealth;
             Debug.Log("Player dead");
             OnPlayerDeath?.Invoke();
 

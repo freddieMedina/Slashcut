@@ -10,7 +10,7 @@ public class ManaBarScript : MonoBehaviour
 {    
     Damagable damagable;
     public Slider manaSlider;
-    public int maxMana = 100;
+    public int maxMana = 60;
     //public float currentMana;
     public int manaDepletionRate = 20;
    public PlayerController pi;
