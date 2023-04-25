@@ -252,6 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: {fileID: 8300000, guid: c5e78fd0d5587c64a861e4c96e15b9da, type: 3}
+  mixer: {fileID: 0}
   volume: 2
   playOnEnter: 1
   playOnExit: 0
@@ -515,7 +516,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -6524598380870367322}
-    m_Position: {x: 310, y: 370, z: 0}
+    m_Position: {x: 310, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5346029983238558942}
     m_Position: {x: 310, y: 150, z: 0}
@@ -529,7 +530,7 @@ AnimatorStateMachine:
   m_StateMachineBehaviours:
   - {fileID: -704056442391768141}
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: -80, y: 370, z: 0}
+  m_EntryPosition: {x: -90, y: 370, z: 0}
   m_ExitPosition: {x: 830, y: 270, z: 0}
   m_ParentStateMachinePosition: {x: -90, y: 190, z: 0}
   m_DefaultState: {fileID: -6524598380870367322}
@@ -683,6 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: {fileID: 8300000, guid: 7bf08a65407653e4ab12eed16bc609f8, type: 3}
+  mixer: {fileID: 0}
   volume: 2
   playOnEnter: 1
   playOnExit: 0
@@ -1340,6 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: {fileID: 8300000, guid: c5e78fd0d5587c64a861e4c96e15b9da, type: 3}
+  mixer: {fileID: 24100000, guid: 5fc73e8aee86e8f419985b68ef4438c7, type: 2}
   volume: 2
   playOnEnter: 1
   playOnExit: 0
@@ -1446,6 +1449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: {fileID: 8300000, guid: 6c4dd6de2c30cbe4a81dc2a7f491f24c, type: 3}
+  mixer: {fileID: 0}
   volume: 4
   playOnEnter: 1
   playOnExit: 0
@@ -1839,6 +1843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: {fileID: 8300000, guid: 27ea1da49321b294380a9907b70bcb23, type: 3}
+  mixer: {fileID: 0}
   volume: 30
   playOnEnter: 1
   playOnExit: 0
@@ -1917,6 +1922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundToPlay: {fileID: 8300000, guid: 58d0050a6a8e2b54fb6c74e6240549bd, type: 3}
+  mixer: {fileID: 0}
   volume: 0.8
   playOnEnter: 1
   playOnExit: 0

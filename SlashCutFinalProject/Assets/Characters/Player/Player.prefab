@@ -131,9 +131,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5292dfbdedf5d784fa7cfec83b59cf82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pickupSource: {fileID: 0}
   walkSpeed: 5
   jumpImpulse: 10
+  mana: {fileID: 0}
   isLadder: 0
+  fallDetector: {fileID: 0}
+  isGround: 0
+  _canRange: 0
   _isMoving: 0
   _isFacingRight: 1
 --- !u!114 &4181803196483705931
@@ -438,6 +443,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  healthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  itemDrops: []
   _maxHealth: 100
   _health: 100
   _isAlive: 1

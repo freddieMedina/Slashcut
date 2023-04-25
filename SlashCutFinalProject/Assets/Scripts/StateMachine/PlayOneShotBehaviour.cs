@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Audio;
+using UnityEngine.UI;
 public class PlayOneShotBehaviour : StateMachineBehaviour
 {
     public AudioClip soundToPlay;
+
+   
+   
+   public AudioMixer mixer;
+
+   
     public float volume = 1f;
     public bool playOnEnter = true;
     public bool playOnExit = false;
@@ -15,6 +22,7 @@ public class PlayOneShotBehaviour : StateMachineBehaviour
     private float timeSinceEntered = 0;
     private bool hasDelayedSoundPlayed = false;
 
+  
 
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -53,5 +61,7 @@ public class PlayOneShotBehaviour : StateMachineBehaviour
        }
     }
 
+
+   
     
 }

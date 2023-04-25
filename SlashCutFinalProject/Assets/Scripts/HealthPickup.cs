@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class HealthPickup : MonoBehaviour
 {
     public int healthRestore = 20;
     AudioSource pickupSource;
+    AudioMixer mixer;
 
     void Start()
     {
@@ -15,6 +17,8 @@ public class HealthPickup : MonoBehaviour
     private void Awake() 
     {
         pickupSource = GetComponent<AudioSource>();
+        mixer = GetComponent<AudioMixer>();
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

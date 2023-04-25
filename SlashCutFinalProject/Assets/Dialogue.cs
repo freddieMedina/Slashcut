@@ -9,6 +9,8 @@ public class Dialogue : MonoBehaviour
    public Text dialogueText;
    public string[] dialogue;
 
+   AudioSource clip;
+
    private int index;
     public float wordSpeed;
     public bool playerIsClose;
@@ -16,7 +18,8 @@ public class Dialogue : MonoBehaviour
 
     void Start()
     {
-        dialogueText.text = null;
+        clip = GetComponent<AudioSource>();
+        dialogueText.text = "";
     }
 
     // Update is called once per frame
@@ -33,7 +36,7 @@ public class Dialogue : MonoBehaviour
         if(index < dialogue.Length -1)
         {
             index++;
-            dialogueText.text = null;
+            dialogueText.text = "";
             StartCoroutine(Typing());
         }else
         {
@@ -43,7 +46,7 @@ public class Dialogue : MonoBehaviour
 
     public void zeroText()
     {
-        dialogueText.text = null;
+        dialogueText.text = "";
         index = 0;
         dialoguePanel.SetActive(false);
     }
@@ -60,6 +63,7 @@ public class Dialogue : MonoBehaviour
     {
         if(other.CompareTag("Player"));
         {
+            clip.Play();
             if(dialoguePanel.activeInHierarchy)
             {
                 zeroText();

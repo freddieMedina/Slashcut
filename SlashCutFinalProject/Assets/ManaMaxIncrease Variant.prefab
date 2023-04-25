@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 250ba1c3bf9990b44a3f6da05930d514, type: 3}
+    - target: {fileID: 5881438234422973530, guid: a7e9d8a45ae975d4aa84fa5d2e6d6b75, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 3408289873359143005, guid: f06fe6841ad4bdf499c93140a702c046, type: 2}
     - target: {fileID: 5881438234422973531, guid: a7e9d8a45ae975d4aa84fa5d2e6d6b75, type: 3}
       propertyPath: mana
       value: 

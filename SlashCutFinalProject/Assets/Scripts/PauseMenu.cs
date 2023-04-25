@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField] GameObject pauseMenuUI; // reference to the UI panel for the pause menu
     [SerializeField] GameObject pauseText; 
+
+    [SerializeField] GameObject volumeMenu;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) // if the Escape key is pressed
@@ -32,6 +34,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false); // disable the pause menu UI panel
         pauseText.SetActive(false);
+        volumeMenu.SetActive(false);
         Time.timeScale = 1f; // resume the game's time scale
         isPaused = false; // set the isPaused flag to false
     }
