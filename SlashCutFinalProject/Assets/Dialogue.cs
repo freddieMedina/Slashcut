@@ -77,10 +77,10 @@ public class Dialogue : MonoBehaviour
 
      private void OnTriggerExit2D(Collider2D other) 
     {
-        // if(other.CompareTag("Player"));
-        // {
+         if(other.CompareTag("Player"));
+         {
             Destroy(gameObject);
             zeroText();
-      //  }    
+        }    
     }
 }
